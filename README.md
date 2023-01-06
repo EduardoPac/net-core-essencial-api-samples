@@ -1,3 +1,3 @@
 # .Net Core Essencial Samples
 
-- CatalogueAPI - (.Net 6, EF Core, MySQL)
+- APICatalogue - (.Net 6, EF Core, MySQL)
