@@ -48,7 +48,6 @@ Generated\ Files/
 *.VisualState.xml
 TestResult.xml
 nunit-*.xml
-Migrations
 
 # Build Results of an ATL Project
 [Dd]ebugPS/
