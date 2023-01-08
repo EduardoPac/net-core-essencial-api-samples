@@ -29,7 +29,7 @@ public class CategoriesController : ControllerBase
         }
         catch (Exception)
         {
-            return StatusCode(StatusCodes.Status500InternalServerError, 
+            return StatusCode(StatusCodes.Status500InternalServerError, //Tratamento externo (swagger/producao) de exceptions
                 "Ocorreu um problema ao tratar a sua solicitação");
         }
         
