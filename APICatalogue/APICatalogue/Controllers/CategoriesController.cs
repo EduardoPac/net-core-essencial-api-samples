@@ -18,12 +18,21 @@ public class CategoriesController : ControllerBase
     [HttpGet]
     public ActionResult<IEnumerable<Category>> Get()
     {
-        var Categories = _dbContext.Categories.AsNoTracking().ToList(); //AsNoTracking melhora o desenpenho não guardando em cache
+        try
+        {
+            var Categories = _dbContext.Categories.AsNoTracking().ToList(); //AsNoTracking melhora o desenpenho não guardando em cache
 
-        if (Categories == null || !Categories.Any())
-            return NotFound("Categories not found...");
+            if (Categories == null || !Categories.Any())
+                return NotFound("Categories not found...");
 
-        return Categories;
+            return Categories;
+        }
+        catch (Exception)
+        {
+            return StatusCode(StatusCodes.Status500InternalServerError, 
+                "Ocorreu um problema ao tratar a sua solicitação");
+        }
+        
     }
 
     [HttpGet("products")]
